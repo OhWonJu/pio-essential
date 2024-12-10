@@ -21,6 +21,7 @@ package-lock.json
 
 **/dist
 services/storybook/storybook-static/**/*
+services/storybook/build-storybook.log
 
 .nx
 

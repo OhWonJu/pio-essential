@@ -8486,7 +8486,6 @@ __metadata:
     glob: "npm:^11.0.0"
     nx: "npm:^20.2.1"
     path: "npm:^0.12.7"
-    tailwind-merge: "npm:^2.5.5"
     typescript: "npm:^5.7.2"
   bin:
     pio-essential: ./scripts/index.js
