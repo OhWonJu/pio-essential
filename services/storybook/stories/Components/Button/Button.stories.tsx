@@ -58,7 +58,7 @@ export const ButtonStory = {
         width={args.width}
         onClick={() => console.log("click")}
       >
-        <span>🔥</span>
+        <span>{args.size === "icon" ? "🔥" : "Click!"}</span>
       </Button>
     </div>
   ),

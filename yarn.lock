@@ -2190,6 +2190,7 @@ __metadata:
     "@storybook/react-vite": "npm:^8.4.6"
     "@storybook/test": "npm:^8.4.6"
     "@vitejs/plugin-react": "npm:^4.3.4"
+    chromatic: "npm:^11.20.0"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
     motion: "npm:^11.13.3"
@@ -5054,7 +5055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^11.15.0":
+"chromatic@npm:^11.15.0, chromatic@npm:^11.20.0":
   version: 11.20.0
   resolution: "chromatic@npm:11.20.0"
   peerDependencies:
