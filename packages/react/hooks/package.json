@@ -1,0 +1,32 @@
+{
+  "name": "@pio-essential/react-hooks",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist.index.cjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "yarn clean",
+    "build": "yarn build:js && yarn build:ts",
+    "build:js": "node build.js",
+    "build:ts": "yarn tsc --emitDeclarationOnly",
+    "dev": "yarn build:js --dev --watch && yarn build:ts --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@pio-essential/webpack-config": "workspace:^",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}

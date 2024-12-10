@@ -1,0 +1,31 @@
+{
+  "name": "pio-essential",
+  "version": "0.0.1",
+  "type": "module",
+  "workspaces": [
+    "packages/**/*",
+    "services/**/*",
+    "scripts"
+  ],
+  "license": "MIT",
+  "packageManager": "yarn@4.5.1",
+  "bin": "./scripts/index.js",
+  "scripts": {
+    "build": "nx build",
+    "graph": "nx run-many --target=build --graph",
+    "dev:storybook": "nx storybook @pio-essential/storybook",
+    "dev:packages": "nx run-many --target=dev --projects='@pio-essential/react-hooks,@pio-essential/react-components-*'",
+    "dev:all": "yarn dev:storybook & yarn dev:packages"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.5"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "nx": "^20.2.1",
+    "path": "^0.12.7",
+    "typescript": "^5.7.2"
+  }
+}

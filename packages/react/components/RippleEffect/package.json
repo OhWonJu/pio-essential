@@ -1,0 +1,30 @@
+{
+  "name": "@pio-essential/react-components-ripple-effect",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "prebuild": "yarn clean",
+    "build": "yarn prebuild && node build.js",
+    "dev": "node build.js --dev --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@pio-essential/webpack-config": "workspace:^",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}
