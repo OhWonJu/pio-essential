@@ -12,12 +12,11 @@ import { LoadingDots } from "@/components/ui/LoadingDots";
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  href?: string;
   className?: string;
   variant?: "flat" | "plain" | "ghost" | "outline" | "link" | "disabled";
   active?: boolean;
   type?: "submit" | "reset" | "button";
-  children: any;
+  children: React.ReactNode | React.ReactNode[];
   width?: number;
   size?: "default" | "sm" | "lg" | "icon";
   loading?: boolean;

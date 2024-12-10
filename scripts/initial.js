@@ -12,17 +12,21 @@ const initProject = () => {
   try {
     console.log("Initializing @pio-essential...");
 
-    console.log("Installing tailwind-merge and clsx...");
+    console.log(
+      "Installing tailwind-merge, clsx and class-variance-authority ...",
+    );
     execSync("yarn add -D tailwindcss postcss autoprefixer", {
       stdio: "inherit",
     });
 
-    execSync("yarn add tailwind-merge clsx ", { stdio: "inherit" });
+    execSync("yarn add tailwind-merge clsx class-variance-authority", {
+      stdio: "inherit",
+    });
 
     console.log("Initializing TailwindCSS...");
     execSync("npx tailwindcss init -p", { stdio: "inherit" });
 
-    const utilsDir = path.resolve(__dirname, "../src/lib");
+    const utilsDir = path.resolve(process.cwd(), "./src/lib");
     if (!fs.existsSync(utilsDir)) {
       fs.mkdirSync(utilsDir, { recursive: true });
     }
