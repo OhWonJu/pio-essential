@@ -3,7 +3,7 @@
 <div align="center">
   <sup>
     <a href="https://6758546295e48c1f5cb91421-troqdvgxok.chromatic.com/?path=/docs/react-components-button--docs">
-      <span style="font-size: 16px;">📖 Storybook</span>
+      <h2 >📖 Storybook</h2>
     </a>
   </sup>
   <br />
@@ -23,7 +23,7 @@ npx pio-essential add Button
 ## Usage
 
 ```tsx
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 ```
 
 ```tsx

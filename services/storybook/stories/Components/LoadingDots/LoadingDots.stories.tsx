@@ -1,5 +1,6 @@
-import { LoadingDots } from "@pio-essential/react-components-loadingdots";
 import React from "react";
+
+import { LoadingDots } from "@pio-essential/react-components-loadingdots";
 
 export default {
   title: "React Components/LoadingDots",

@@ -48,7 +48,7 @@ pio-esential 의 컴포넌트, 훅은 npm 을 통해 제공되지 않습니다. 
 
 > **Note**: Shadcn UI를 사용하고 있다면 해당 단계를 건너뛰어도 무방합니다.
 >
-> [shadcn UI를 통해 좀 더 자세하게 종속성 설치 및 환경 설정하기](https://ui.shadcn.com/docs/installation/vite)
+> [shadcn UI를 통해 좀 더 자세하게 종속성 설치 및 환경 설정하기 (권장)](https://ui.shadcn.com/docs/installation/vite)
 
 <br />
 

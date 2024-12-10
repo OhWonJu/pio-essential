@@ -34,8 +34,8 @@ export default {
     },
   },
   args: {
-    size: "default",
     variant: "flat",
+    size: "default",
     disabled: false,
     loading: false,
   },
