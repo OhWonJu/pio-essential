@@ -13,6 +13,6 @@ if (args[0] === "init") {
 } else if (args[0] === "add") {
   import(path.resolve(__dirname, "./copy.js"));
 } else {
-  console.error("Usage: npx @pio-essential <init|add>");
+  console.error("Usage: npx pio-essential <init|add>");
   process.exit(1);
 }
