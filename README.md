@@ -29,20 +29,19 @@
 </div>
 
 그래서 만들어 봤습니다. <br/>
-PIO 가 애정하고 자주 쓰는 React Component, Hook 모음집 _**pio-essential**_
+PIO 가 애정하고 자주 쓰는 React Components, Hooks 모음집 _**pio-essential**_
 <br />
 <br />
 
-> **pio-essential:**
->
-> 필요한 컴포넌트, 훅을 프로젝트에 복사하여 붙여넣을 수 있는 오픈 소스 라이브러리 입니다.
+> **pio-essential:** <br/>
+> 필요한 컴포넌트, 훅을 프로젝트에 복사하여 붙여넣을 수 있는 React 오픈 소스 라이브러리 입니다.
 
 <br />
 
 pio-essnital 은 npx 를 통해 필요한 컴포넌트, 훅을 복사하여 붙여넣을 수 있는 재사용 가능한 컴포넌트, 훅 모음입니다. <br />
 필요한 컴포넌트, 훅을 선택하고 프로젝트에 복사하세요! 그리고 필요한 부분들을 수정해서 사용하세요! <br />
 <br />
-pio-esential 의 컴포넌트, 훅은 npm 을 통해 제공되지 않습니다. <br />
+_pio-esential 의 컴포넌트, 훅은 npm 을 통해 제공되지 않습니다._ <br />
 <br />
 
 ## Installation
@@ -51,9 +50,7 @@ pio-esential 의 컴포넌트, 훅은 npm 을 통해 제공되지 않습니다. 
 그렇기 때문에 pio-essential 의 컴포넌트를 사용하기 위해서는 다음의 종속성 설치 및 환경 설정이 필요합니다. <br />
 <br />
 
-> **Note**: Shadcn UI 를 사용하고 있다면 해당 단계를 건너뛰어도 무방합니다.
->
-> [shadcn UI 를 통해 좀 더 자세하게 종속성 설치 및 환경 설정하기 (권장)](https://ui.shadcn.com/docs/installation/vite)
+> **Note**: Shadcn UI 를 사용하고 있다면 해당 단계를 건너뛰어도 무방합니다. <br /> [shadcn UI 를 통해 좀 더 자세하게 종속성 설치 및 환경 설정하기 (권장)](https://ui.shadcn.com/docs/installation/vite)
 
 <br />
 
