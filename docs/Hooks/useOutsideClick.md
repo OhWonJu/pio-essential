@@ -26,10 +26,8 @@ npx pio-essential add useOutsideClick
 
 ```tsx
 import { useOutsideClick } from "@/hooks/useOutsideClick";
-```
 
-```tsx
-export function UseOutsideClickDemo {
+export function UseOutsideClickDemo() {
   ...
   const [showModal, setShowModal] = useState(false);
 

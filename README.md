@@ -35,20 +35,25 @@ PIO 가 애정하고 자주 쓰는 React Component, Hook 모음집 _**pio-essent
 
 > **pio-essential:**
 >
-> 종속성 추가 없이 필요한 컴포넌트, 훅을 프로젝트에 복사하여 붙여넣을 수 있는 오픈 소스 라이브러리 입니다.
+> 필요한 컴포넌트, 훅을 프로젝트에 복사하여 붙여넣을 수 있는 오픈 소스 라이브러리 입니다.
 
-pio-essnital 은 npx 를 통해 필요한 코드만 복사하여 붙여넣을 수 있는 재사용 가능한 컴포넌트, 훅 모음입니다. <br />
-pio-esential 의 컴포넌트, 훅은 npm 을 통해 제공되지 않습니다. <br />
+<br />
+
+pio-essnital 은 npx 를 통해 필요한 컴포넌트, 훅을 복사하여 붙여넣을 수 있는 재사용 가능한 컴포넌트, 훅 모음입니다. <br />
 필요한 컴포넌트, 훅을 선택하고 프로젝트에 복사하세요! 그리고 필요한 부분들을 수정해서 사용하세요! <br />
+<br />
+pio-esential 의 컴포넌트, 훅은 npm 을 통해 제공되지 않습니다. <br />
+<br />
 
 ## Installation
 
-**pio-essential**은 [**shadcn/ui**](https://ui.shadcn.com/docs/installation)으로부터 모티브를 얻었으며, **TailwindCSS**를 기반으로 작성되었습니다. <br />
+**pio-essential** 은 [**shadcn/ui**](https://ui.shadcn.com/docs/installation) 으로부터 모티브를 얻었으며, **TailwindCSS** 를 기반으로 작성되었습니다. <br />
 그렇기 때문에 pio-essential 의 컴포넌트를 사용하기 위해서는 다음의 종속성 설치 및 환경 설정이 필요합니다. <br />
+<br />
 
-> **Note**: Shadcn UI를 사용하고 있다면 해당 단계를 건너뛰어도 무방합니다.
+> **Note**: Shadcn UI 를 사용하고 있다면 해당 단계를 건너뛰어도 무방합니다.
 >
-> [shadcn UI를 통해 좀 더 자세하게 종속성 설치 및 환경 설정하기 (권장)](https://ui.shadcn.com/docs/installation/vite)
+> [shadcn UI 를 통해 좀 더 자세하게 종속성 설치 및 환경 설정하기 (권장)](https://ui.shadcn.com/docs/installation/vite)
 
 <br />
 
@@ -132,14 +137,14 @@ main.css
 @tailwind utilities;
 ```
 
-NextJS, vite 환경 등 더 자세한 TailwindCSS 설정은 [TailwindCSS 공식 문서](https://tailwindcss.com/docs/installation/framework-guides)를 따라주세요.
+NextJS, Vite 등 다양한 환경에서의 TailwindCSS 설정은 [TailwindCSS 공식 문서](https://tailwindcss.com/docs/installation/framework-guides)를 따라주세요.
 <br />
 <br />
 
-### 2. 그 외 종속성 설치하기 및 유틸리티 함수 생성
+### 2. 그 외 종속성 설치 및 유틸리티 함수 생성
 
 ```
-npm install class-variance-authority clsx tailwind-merge
+npm install tailwind-merge clsx class-variance-authority
 ```
 
 ```
@@ -166,10 +171,11 @@ export function cn(...inputs: ClassValue[]) {
 pio-essential 의 컴포넌트, 훅은 다음의 구조에 복사됩니다.
 
 ```
-project-root/
-            /src
-               /components/ui
-               /hooks
+root
+└── 📦 src
+    ├── 📂 components
+    |   └── 📂 ui
+    └── 📂 hooks
 ```
 
 연관된 컴포넌트, 유틸리티 함수 import 를 위해 path alias 설정이 필요합니다.
@@ -194,7 +200,7 @@ tsconfig
 
 # StoryBook 을 통해 사용법 알아보기
 
-[StoryBook](https://6758546295e48c1f5cb91421-troqdvgxok.chromatic.com/)을 통해 컴포넌트 및 훅의 Reference를 알아보세요!
+[StoryBook](https://6758546295e48c1f5cb91421-kvbkhvgxeg.chromatic.com/) 을 통해 컴포넌트 및 훅의 Reference를 알아보세요!
 
 <br />
 <br />

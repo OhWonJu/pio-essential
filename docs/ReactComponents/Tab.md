@@ -1,16 +1,10 @@
 # `Tab`
 
-React ContextAPI 기반 Tab Components
+React ContextAPI, motion(구 Framer-motion) 기반 Tab Components
 
-<div align="center">
-  <sup>
-    <a href="https://6758546295e48c1f5cb91421-troqdvgxok.chromatic.com/?path=/docs/react-components-tab--docs">
-      <h2 >📖 Storybook</h2>
-    </a>
-  </sup>
-  <br />
-  <br />
-</div>
+[storybook](https://6758546295e48c1f5cb91421-kvbkhvgxeg.chromatic.com/?path=/docs/react-components-tab--docs)
+
+<br/>
 
 ## Installation
 
@@ -36,24 +30,17 @@ yarn add motion
 
 ```tsx
 import { TabHeader, TabProvider, TabSection } from "@/components/ui/Tab";
-```
 
-```tsx
-export function TabDemo {
+export function TabDemo() {
   return (
-     <div className="w-[500px] h-[500px] bg-background overflow-hidden">
+    <div className="w-[500px] h-[500px] bg-background overflow-hidden">
       <TabProvider defaultActiveTab={0}>
         <TabHeader className="h-[60px]">
           <span>1</span>
           <span>2</span>
           <span>3</span>
         </TabHeader>
-        <TabSection
-          className="p-4"
-          distance={30}
-          duration={0.4}
-          useAnimation
-        >
+        <TabSection className="p-4" distance={30} duration={0.4} useAnimation>
           <div className="bg-red-100">tab1</div>
           <div className="bg-blue-200">tab2</div>
           <div className="bg-green-200">tab3</div>

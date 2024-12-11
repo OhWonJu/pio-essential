@@ -1,14 +1,8 @@
 # `LoadingDots`
 
-<div align="center">
-  <sup>
-    <a href="https://6758546295e48c1f5cb91421-troqdvgxok.chromatic.com/?path=/docs/react-components-loadingdots--docs">
-      <h2 >📖 Storybook</h2>
-    </a>
-  </sup>
-  <br />
-  <br />
-</div>
+[storybook](https://6758546295e48c1f5cb91421-kvbkhvgxeg.chromatic.com/?path=/docs/react-components-loadingdots--docs)
+
+<br />
 
 ## Installation
 
@@ -24,13 +18,9 @@ npx pio-essential add LoadingDots
 
 ```tsx
 import { LoadingDots } from "@/components/ui/LoadingDots";
-```
 
-```tsx
-export function LoadingDotsDemo {
-  return (
-    <LoadingDots />
-  );
+export function LoadingDotsDemo() {
+  return <LoadingDots />;
 }
 ```
 

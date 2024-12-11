@@ -1,16 +1,10 @@
 # `RippleEffect`
 
-클릭 액션에 반응하는 잔물결 이펙트
+클릭 액션에 의해 생성되는 잔물결 이펙트 컴포넌트
 
-<div align="center">
-  <sup>
-    <a href="https://6758546295e48c1f5cb91421-troqdvgxok.chromatic.com/?path=/docs/react-components-rippleeffect--docs">
-      <h2 >📖 Storybook</h2>
-    </a>
-  </sup>
-  <br />
-  <br />
-</div>
+[storybook](https://6758546295e48c1f5cb91421-kvbkhvgxeg.chromatic.com/?path=/docs/react-components-rippleeffect--docs)
+
+<br/>
 
 ## Installation
 
@@ -26,10 +20,8 @@ npx pio-essential add RippleEffect
 
 ```tsx
 import { RippleEffect, RippleRef } from "@/components/ui/RippleEffect";
-```
 
-```tsx
-export function RippleEffectDemo {
+export function RippleEffectDemo() {
   const rippleRef = useRef<RippleRef>(null);
 
   const onClickHandler = (event: MouseEvent<HTMLElement>) => {
@@ -39,17 +31,23 @@ export function RippleEffectDemo {
   return (
     <Button
       onClick={(e) => onClickHandler(e)}
+      className="relative overflow-hidden"
     >
       <RippleEffect
         ref={rippleRef}
         rippleColor={args.rippleColor ? args.rippleColor : "var(--puls)"}
       />
-      <span>
-        Click!
-      </span>
+      <span>Click!</span>
     </Button>
   );
 }
+```
+
+RippleEffect 의 범위를 제한하기 위해 RippleEffect 의 대상이 되는 컨테이너 컴포넌트에 다음의 스타일을 지정해야 합니다.
+
+```css
+position: relative;
+overflow: hidden;
 ```
 
 <br />

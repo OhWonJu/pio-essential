@@ -1,14 +1,8 @@
 # `Button`
 
-<div align="center">
-  <sup>
-    <a href="https://6758546295e48c1f5cb91421-troqdvgxok.chromatic.com/?path=/docs/react-components-button--docs">
-      <h2 >📖 Storybook</h2>
-    </a>
-  </sup>
-  <br />
-  <br />
-</div>
+[storybook](https://6758546295e48c1f5cb91421-kvbkhvgxeg.chromatic.com/?path=/docs/react-components-button--docs)
+
+<br />
 
 ## Installation
 
@@ -16,6 +10,7 @@ CLI
 
 ```bash
 npx pio-essential add Button
+npx pio-essential add LoadingDots
 ```
 
 <br />
@@ -24,12 +19,14 @@ npx pio-essential add Button
 
 ```tsx
 import { Button } from "@/components/ui/Button";
-```
 
-```tsx
-<Button>
-  <span>{args.size === "icon" ? "🔥" : "Click!"}</span>
-</Button>
+export function ButtonDemo() {
+  return (
+    <Button>
+      <span>{args.size === "icon" ? "🔥" : "Click!"}</span>
+    </Button>
+  );
+}
 ```
 
 <br />
