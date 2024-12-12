@@ -42,7 +42,7 @@ yarn add body-scroll-lock
 ```tsx
 import { useModal } from "@/stores/useModalStore";
 
-import { MySidebar, SettingSidebar } from "@/components/Modal/modalViews";
+import { CartModal, ConfrimModal } from "@/components/Modal/modalViews";
 
 export function ModalProvider() {
   const { type } = useModal();
@@ -69,7 +69,7 @@ import { useModal } from "@/stores/useModalStore";
 import { ModalBody, ModalFooter, ModalLayout } from "@/components/ui/Modal";
 
 export function CartModal() {
-  const { isOpne, onClose } = useSidebar();
+  const { isOpne, onClose } = useModal();
 
   ...
 
@@ -106,6 +106,24 @@ export function App() {
     <ModalProvider />
     ...
   </div>)
+}
+```
+
+**Modal Consumer Component**
+
+```tsx
+export function ModalConsumber() {
+  const { onOpen } = useModal();
+
+  ...
+
+  return (
+    <div>
+      ...
+      <button onClick={() => onOpne("cart")}>Open Cart</button>
+      ...
+    </div>
+  );
 }
 ```
 

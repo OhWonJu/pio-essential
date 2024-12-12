@@ -43,14 +43,14 @@ yarn add body-scroll-lock
 ```tsx
 import { useSidebar } from "@/stores/useSidebarStore";
 
-import { MySidebar, SettingSidebar } from "@/components/Sidebar/sidebarViews";
+import { MenuSidebar, SettingSidebar } from "@/components/Sidebar/sidebarViews";
 
 export function SidebarProvider() {
   const { type } = useSidebar();
 
   return (
     <>
-      {type === "my" && <MySidebar />}
+      {type === "menu" && <MenuSidebar />}
       {type === "setting" && <SettingSidebar />}
       ...
     </>
@@ -74,12 +74,12 @@ import {
 } from "@/components/ui/Sidebar";
 
 
-export function MySidebar() {
+export function MenuSidebar() {
   const { isOpne, onClose } = useSidebar();
 
   ...
 
-  const SidebarHeader = <span>My Sidebar</span>;
+  const SidebarHeader = <span>Menu</span>;
 
   return (
     <SidebarLayout
@@ -111,6 +111,26 @@ export function App() {
     <SidebarProvider />
     ...
   </div>)
+}
+```
+
+<br />
+
+**Sidebar Consumer Component**
+
+```tsx
+export function SidebarConsumber() {
+  const { onOpen } = useSidebar();
+
+  ...
+
+  return (
+    <div>
+      ...
+      <button onClick={() => onOpne("menu")}>Menu</button>
+      ...
+    </div>
+  );
 }
 ```
 
