@@ -38,7 +38,7 @@ PIO 가 애정하고 자주 쓰는 React Components, Hooks 모음집 _**pio-esse
 
 <br />
 
-pio-essnital 은 npx 를 통해 필요한 컴포넌트, 훅을 복사하여 붙여넣을 수 있는 재사용 가능한 컴포넌트, 훅 모음입니다. <br />
+pio-essntial 은 npx 를 통해 필요한 컴포넌트, 훅을 복사하여 붙여넣을 수 있는 재사용 가능한 컴포넌트, 훅 모음입니다. <br />
 필요한 컴포넌트, 훅을 선택하고 프로젝트에 복사하세요! 그리고 필요한 부분들을 수정해서 사용하세요! <br />
 <br />
 _pio-essential 의 컴포넌트, 훅은 npm 을 통해 제공되지 않습니다._ <br />
@@ -204,9 +204,11 @@ tsconfig
 <br />
 
 # Usage
+
 ```
 npx pio-essential add <NAME>
 ```
+
 <br />
 <br />
 

@@ -121,7 +121,7 @@ export function App() {
 **Sidebar Consumer Component**
 
 ```tsx
-export function SidebarConsumber() {
+export function SidebarConsumer() {
   const { onOpen } = useSidebar();
 
   ...

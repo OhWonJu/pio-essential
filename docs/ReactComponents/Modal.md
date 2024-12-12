@@ -114,7 +114,7 @@ export function App() {
 **Modal Consumer Component**
 
 ```tsx
-export function ModalConsumber() {
+export function ModalConsumer() {
   const { onOpen } = useModal();
 
   ...
