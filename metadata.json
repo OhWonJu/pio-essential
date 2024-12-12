@@ -1,5 +1,6 @@
 {
   "componentDirs": ["RippleEffect", "LoadingDots", "Tab"],
   "components": ["Button", "Input", "Card"],
-  "hooks": ["useOutsideClick"]
+  "hooks": ["useOutsideClick"],
+  "icons": ["ChevronLeft", "ChevronRight", "Cross"]
 }

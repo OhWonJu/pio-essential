@@ -12,6 +12,7 @@ const CONFIG = {
     components: "src/components/ui",
     hooks: "src/hooks",
     providers: "src/components/providers",
+    icons: "src/components/icons",
   },
 };
 
@@ -21,6 +22,7 @@ const metadata = JSON.parse(fs.readFileSync(metadataPath, "utf-8"));
 const COMPONENTS_DIR = path.resolve(__dirname, "../packages/react/components");
 const HOOKS_DIR = path.resolve(__dirname, "../packages/react/hooks/src");
 const PROVIDERS_DIR = path.resolve(__dirname, "../packages/react/providers");
+const ICONS_DIR = path.resolve(__dirname, "../packages/react/icons/src");
 
 const copyComponent = async (componentName) => {
   const componentPath = path.join(
@@ -79,6 +81,22 @@ const copyComponentDir = async (componentDirName) => {
   console.log(`Copied component directory: ${targetComponentDir}`);
 };
 
+const copyIcon = async (iconName) => {
+  const iconPath = path.join(ICONS_DIR, `${iconName}.tsx`);
+  const targetIconDir = path.resolve(process.cwd(), `./${CONFIG.paths.icons}`);
+
+  if (!fs.existsSync(iconPath)) {
+    console.error(`Icon ${iconName} not found.`);
+    return;
+  }
+
+  await fs.ensureDir(targetIconDir);
+  const targetPath = path.join(targetIconDir, `${iconName}.tsx`);
+  await fs.copy(iconPath, targetPath);
+
+  console.log(`Copied icon: ${targetPath}`);
+};
+
 const copyHook = async (hookName) => {
   const hookPath = path.join(HOOKS_DIR, `${hookName}.ts`);
   const targetHookDir = path.resolve(process.cwd(), `./${CONFIG.paths.hooks}`);
@@ -120,6 +138,8 @@ if (args[0] === "add" && args[1]) {
     );
   } else if (metadata.hooks.includes(name)) {
     copyHook(name).catch((err) => console.error("Error copying hook:", err));
+  } else if (metadata.icons.includes(name)) {
+    copyIcon(name).catch((err) => console.error("Error copying icon:", err));
   } else {
     console.error(`Error: ${name} not found in metadata.`);
   }
