@@ -197,7 +197,7 @@ tsconfig
 
 # StoryBook 을 통해 사용법 알아보기
 
-[StoryBook](https://6758546295e48c1f5cb91421-kvbkhvgxeg.chromatic.com/) 을 통해 컴포넌트 및 훅의 Reference를 알아보세요!
+[StoryBook](https://6758546295e48c1f5cb91421-zthmjnwxmn.chromatic.com/) 을 통해 컴포넌트 및 훅의 Reference를 알아보세요!
 
 <br />
 <br />
@@ -206,7 +206,9 @@ tsconfig
 
 - [`Button`](./docs/ReactComponents/Button.md)
 - [`LoadingDots`](./docs/ReactComponents/LoadingDots.md)
+- [`Modal`](./docs/ReactComponents//Modal.md)
 - [`RippleEffect`](./docs/ReactComponents/RippleEffect.md) &mdash; 잔물결 이펙트를 생성하는 컴포넌트
+- [`Sidebar`](./docs/ReactComponents//Sidebar.md) &mdash; Resizeable Sidebar 컴포넌트
 - [`Tab`](./docs/ReactComponents/Tab.md) &mdash; React Context API 기반 Tab Header, Tab Section
 
 <br />

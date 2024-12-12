@@ -1,6 +1,6 @@
 # `Button`
 
-[storybook](https://6758546295e48c1f5cb91421-kvbkhvgxeg.chromatic.com/?path=/docs/react-components-button--docs)
+[storybook](https://6758546295e48c1f5cb91421-zthmjnwxmn.chromatic.com/?path=/docs/react-components-button--docs)
 
 <br />
 

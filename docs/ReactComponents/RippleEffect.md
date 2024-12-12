@@ -2,7 +2,7 @@
 
 클릭 액션에 의해 생성되는 잔물결 이펙트 컴포넌트
 
-[storybook](https://6758546295e48c1f5cb91421-kvbkhvgxeg.chromatic.com/?path=/docs/react-components-rippleeffect--docs)
+[storybook](https://6758546295e48c1f5cb91421-zthmjnwxmn.chromatic.com/?path=/docs/react-components-rippleeffect--docs)
 
 <br/>
 
