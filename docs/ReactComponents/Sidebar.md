@@ -13,7 +13,7 @@ CLI
 ```bash
 npx pio-essential add useOutsideClick
 npx pio-essential add ChevronLeft
-npx pio-essentail add ChevronRight
+npx pio-essential add ChevronRight
 npx pio-essential add Sidebar
 ```
 
