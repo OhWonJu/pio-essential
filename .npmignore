@@ -3,7 +3,12 @@ node_modules/
 **/node_modules
 webpack.*.js
 .git-commit-template
+
 services/storybook/storybook-static/**/*
 services/storybook/build-storybook.log
+
+packages/react/components/**/src/components
+packages/react/components/**/src/lib
+packages/react/components/**/src/hooks
 
 .env
