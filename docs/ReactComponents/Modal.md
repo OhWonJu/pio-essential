@@ -101,11 +101,13 @@ export function CartModal() {
 export function App() {
   ...
 
-  return (<div>
-    ...
-    <ModalProvider />
-    ...
-  </div>)
+  return (
+    <div>
+      ...
+      <ModalProvider />
+      ...
+    </div>
+  );
 }
 ```
 

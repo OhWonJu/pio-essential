@@ -106,11 +106,13 @@ export function MenuSidebar() {
 export function App() {
   ...
 
-  return (<div>
-    ...
-    <SidebarProvider />
-    ...
-  </div>)
+  return (
+    <div>
+      ...
+      <SidebarProvider />
+      ...
+    </div>
+  );
 }
 ```
 
@@ -206,8 +208,8 @@ export const SidebarLayout = ({
     let newWidth =
       align === "left" ? event.clientX : event.view.innerWidth - event.clientX;
 
-    if (newWidth < 240) newWidth = 240;
-    if (newWidth > 300) newWidth = 300;
+    if (newWidth < minWidth) newWidth = minWidth;
+    if (newWidth > maxWidth) newWidth = maxWidth;
 
     if (sidebarRef.current) {
       sidebarRef.current.style.width = `${newWidth}px`;
@@ -237,7 +239,6 @@ export const SidebarLayout = ({
 
   useEffect(() => {
     resetWidth();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sidebarRef.current, viewMode]);
 
  ...
