@@ -1,5 +1,5 @@
 {
-  "componentDirs": ["RippleEffect", "LoadingDots", "Tab"],
+  "componentDirs": ["RippleEffect", "LoadingDots", "Modal", "Sidebar", "Tab"],
   "components": ["Button", "Input", "Card"],
   "hooks": ["useOutsideClick"],
   "icons": ["ChevronLeft", "ChevronRight", "Cross"]

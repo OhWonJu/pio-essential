@@ -1,6 +1,6 @@
 {
   "name": "pio-essential",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "TailwindCSS based React Design System & utility hooks",
   "keywords": [
     "React",
