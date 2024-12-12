@@ -24,7 +24,7 @@ npm install body-scroll-lock
 ```
 
 ```bash
-yarn add -D body-scroll-lock
+yarn add -D @types/body-scroll-lock
 yarn add body-scroll-lock
 ```
 
