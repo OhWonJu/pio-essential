@@ -7,6 +7,7 @@ import {
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+
 import { LoadingDots } from "@/components/ui/LoadingDots";
 
 export interface ButtonProps
@@ -46,7 +47,7 @@ const buttonVariants = cva(
         icon: "h-10 w-10 text-base rounded-full",
       },
     },
-  },
+  }
 );
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -68,6 +69,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const _variant = disabled ? "disabled" : variant;
     const _width = width ? (width <= 1 ? `${width * 100}%` : width) : undefined;
+
     const handleClick = useCallback(
       (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
@@ -75,7 +77,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         onClick();
       },
-      [onClick],
+      [onClick]
     );
 
     return (
@@ -96,5 +98,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {loading ? <LoadingDots /> : <>{children}</>}
       </button>
     );
-  },
+  }
 );
