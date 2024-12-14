@@ -22,7 +22,7 @@ export interface ButtonProps
   size?: "default" | "sm" | "lg" | "icon";
   loading?: boolean;
   disabled?: boolean;
-  onClick: () => void;
+  onClick: (event: MouseEvent) => void;
 }
 
 const buttonVariants = cva(
@@ -47,7 +47,7 @@ const buttonVariants = cva(
         icon: "h-10 w-10 text-base rounded-full",
       },
     },
-  }
+  },
 );
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -75,9 +75,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         event.stopPropagation();
         event.preventDefault();
 
-        onClick();
+        onClick(event);
       },
-      [onClick]
+      [onClick],
     );
 
     return (
@@ -98,5 +98,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {loading ? <LoadingDots /> : <>{children}</>}
       </button>
     );
-  }
+  },
 );

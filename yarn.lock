@@ -1876,23 +1876,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pio-essential/providers@workspace:packages/react/components/provider":
-  version: 0.0.0-use.local
-  resolution: "@pio-essential/providers@workspace:packages/react/components/provider"
-  languageName: unknown
-  linkType: soft
-
 "@pio-essential/react-components-button@workspace:^, @pio-essential/react-components-button@workspace:packages/react/components/Button":
   version: 0.0.0-use.local
   resolution: "@pio-essential/react-components-button@workspace:packages/react/components/Button"
   dependencies:
+    "@pio-essential/react-components-loadingdots": "workspace:^"
+    "@pio-essential/react-libs": "workspace:^"
     "@pio-essential/webpack-config": "workspace:^"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
     class-variance-authority: "npm:^0.7.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    tailwindcss: "npm:^3.4.16"
   peerDependencies:
     react: "*"
   languageName: unknown
@@ -1917,6 +1912,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pio-essential/react-components-modal@workspace:packages/react/components/Modal"
   dependencies:
+    "@pio-essential/react-hooks": "workspace:^"
+    "@pio-essential/react-icons": "workspace:^"
+    "@pio-essential/react-libs": "workspace:^"
     "@pio-essential/webpack-config": "workspace:^"
     "@types/body-scroll-lock": "npm:^3.1.2"
     "@types/react": "npm:^18.3.12"
@@ -1949,6 +1947,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pio-essential/react-components-sidebar@workspace:packages/react/components/Sidebar"
   dependencies:
+    "@pio-essential/react-hooks": "workspace:^"
+    "@pio-essential/react-icons": "workspace:^"
+    "@pio-essential/react-libs": "workspace:^"
     "@pio-essential/webpack-config": "workspace:^"
     "@types/body-scroll-lock": "npm:^3.1.2"
     "@types/react": "npm:^18.3.12"
@@ -1967,6 +1968,7 @@ __metadata:
   resolution: "@pio-essential/react-components-tab@workspace:packages/react/components/Tab"
   dependencies:
     "@emotion/is-prop-valid": "npm:^1.3.1"
+    "@pio-essential/react-libs": "workspace:^"
     "@pio-essential/webpack-config": "workspace:^"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
@@ -1979,7 +1981,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pio-essential/react-hooks@workspace:packages/react/hooks":
+"@pio-essential/react-hooks@workspace:^, @pio-essential/react-hooks@workspace:packages/react/hooks":
   version: 0.0.0-use.local
   resolution: "@pio-essential/react-hooks@workspace:packages/react/hooks"
   dependencies:
@@ -1994,7 +1996,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pio-essential/react-icons@workspace:packages/react/icons":
+"@pio-essential/react-icons@workspace:^, @pio-essential/react-icons@workspace:packages/react/icons":
   version: 0.0.0-use.local
   resolution: "@pio-essential/react-icons@workspace:packages/react/icons"
   dependencies:
@@ -2006,6 +2008,15 @@ __metadata:
     typescript: "npm:^5.6.3"
   peerDependencies:
     react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@pio-essential/react-libs@workspace:^, @pio-essential/react-libs@workspace:packages/react/lib":
+  version: 0.0.0-use.local
+  resolution: "@pio-essential/react-libs@workspace:packages/react/lib"
+  dependencies:
+    "@pio-essential/webpack-config": "workspace:^"
+    typescript: "npm:^5.6.3"
   languageName: unknown
   linkType: soft
 
@@ -2021,6 +2032,9 @@ __metadata:
     "@pio-essential/react-components-ripple-effect": "workspace:^"
     "@pio-essential/react-components-sidebar": "workspace:^"
     "@pio-essential/react-components-tab": "workspace:^"
+    "@pio-essential/react-hooks": "workspace:^"
+    "@pio-essential/react-icons": "workspace:^"
+    "@pio-essential/react-libs": "workspace:^"
     "@pio-essential/tailwind-config": "workspace:^"
     "@storybook/addon-a11y": "npm:^8.4.7"
     "@storybook/addon-essentials": "npm:^8.4.6"
