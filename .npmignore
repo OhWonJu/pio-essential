@@ -10,5 +10,6 @@ services/storybook/build-storybook.log
 packages/react/components/**/src/components
 packages/react/components/**/src/lib
 packages/react/components/**/src/hooks
+packages/react/**/dist
 
 .env
