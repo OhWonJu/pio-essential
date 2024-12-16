@@ -215,6 +215,7 @@ npx pio-essential add <NAME>
 # Components
 
 - [`Button`](./docs/ReactComponents/Button.md)
+- [`HorizontalList`](./docs/ReactComponents/HorizontalList.md)
 - [`LoadingDots`](./docs/ReactComponents/LoadingDots.md)
 - [`Modal`](./docs/ReactComponents//Modal.md)
 - [`RippleEffect`](./docs/ReactComponents/RippleEffect.md) &mdash; 잔물결 이펙트를 생성하는 컴포넌트
@@ -226,6 +227,7 @@ npx pio-essential add <NAME>
 
 # Hooks
 
+- [`useHorizontalScroll`](./docs/Hooks/useHorizontalScroll.md) &mdash; 수평 스크롤을 위한 Grabbing 이벤트 기능을 제공하는 Hook
 - [`useOutsideClick`](./docs/Hooks/useOutsideClick.md) &mdash; 특정 영역 외부 클릭에 대한 callback 기능을 제공하는 Hook
 
 <br />
