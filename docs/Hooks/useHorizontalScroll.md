@@ -32,7 +32,7 @@ export function UseHorizontalScrollDemo() {
   const isGrabbing = useHorizontalScroll(listRef, 50);
 
   return (
-    <div ref={listRef}>
+    <div ref={listRef} className="relative">
       {RenderedItems}
       {/* RenderedItems 클릭 방지를 위한 요소 */}
       <div
