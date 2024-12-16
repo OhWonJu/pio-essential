@@ -24,13 +24,12 @@ export default {
     hasMoreAction: {
       description: "더보기 액선 함수 (() => void | optional)",
     },
-
     exceptionGuide: {
       control: "text",
       description: "리스트 예외 가이드 텍스트 (optional)",
     },
     exceptionAction: {
-      description: "더보기 에외 액선 함수 (() => void | optional)",
+      description: "리스트 에외 액선 함수 (() => void | optional)",
     },
     singleLine: {
       control: "boolean",

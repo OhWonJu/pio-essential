@@ -1,6 +1,6 @@
 {
   "componentDirs": ["RippleEffect", "LoadingDots", "Modal", "Sidebar", "Tab"],
   "components": ["Button", "HorizontalList", "Input", "Card"],
-  "hooks": ["useOutsideClick"],
+  "hooks": ["useHorizontalScroll", "useOutsideClick"],
   "icons": ["ChevronLeft", "ChevronRight", "Cross"]
 }
