@@ -1,6 +1,10 @@
-import React from "react";
+import React, { MouseEvent, MouseEventHandler, useRef } from "react";
 
 import { Button } from "@pio-essential/react-components-button";
+import {
+  RippleEffect,
+  RippleRef,
+} from "@pio-essential/react-components-ripple-effect";
 
 export default {
   title: "React Components/Button",
@@ -48,18 +52,49 @@ export const ButtonStory = {
     disabled: boolean;
     loading: boolean;
     width?: number;
-  }) => (
-    <div className="bg-background p-10">
-      <Button
-        variant={args.variant}
-        size={args.size}
-        disabled={args.disabled}
-        loading={args.loading}
-        width={args.width}
-        onClick={() => console.log("click")}
-      >
-        <span>{args.size === "icon" ? "🔥" : "Click!"}</span>
-      </Button>
-    </div>
-  ),
+  }) => {
+    const clickHandler = () => {
+      console.log("click");
+    };
+
+    return (
+      <div className="bg-background p-10">
+        <Button
+          variant={args.variant}
+          size={args.size}
+          disabled={args.disabled}
+          loading={args.loading}
+          width={args.width}
+          onClick={clickHandler}
+        >
+          <span>{args.size === "icon" ? "🔥" : "Click!"}</span>
+        </Button>
+      </div>
+    );
+  },
+};
+
+export const ButtonWithRipple = {
+  render: () => {
+    const rippleRef = useRef<RippleRef>(null);
+
+    const clickHandler = (event: MouseEvent) => {
+      rippleRef.current?.createRipple(event);
+      console.log("click");
+    };
+
+    return (
+      <div className="bg-background p-10">
+        <Button
+          variant={"plain"}
+          size={"icon"}
+          onClick={clickHandler}
+          className="w-16 h-16 text-3xl border border-neutral-300 dark:border-neutral-700"
+        >
+          <RippleEffect ref={rippleRef} rippleColor={"var(--puls)"} />
+          <span>🌊</span>
+        </Button>
+      </div>
+    );
+  },
 };

@@ -17,13 +17,14 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
+    "@pio-essential/react-components-loadingdots": "workspace:^",
+    "@pio-essential/react-libs": "workspace:^",
     "@pio-essential/webpack-config": "workspace:^",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "class-variance-authority": "^0.7.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.16"
+    "react-dom": "^18.3.1"
   },
   "peerDependencies": {
     "react": "*"

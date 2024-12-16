@@ -2,7 +2,7 @@
 
 Modal Components
 
-[storybook](https://6758546295e48c1f5cb91421-zthmjnwxmn.chromatic.com/?path=/docs/react-components-modal--docs)
+[storybook](https://6758546295e48c1f5cb91421-cmrntqxcen.chromatic.com/?path=/docs/react-components-modal--docs)
 
 <br/>
 

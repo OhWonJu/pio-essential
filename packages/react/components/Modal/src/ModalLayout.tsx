@@ -34,7 +34,9 @@ export const ModalLayout = ({
 
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
   const containerRef = useRef() as React.MutableRefObject<HTMLDivElement>;
-  const currentPath = useRef(location.pathname);
+
+  console.log("cn: ", useOutsideClick);
+  console.log("???: ", useOutsideClick);
 
   const handleClose = useCallback(() => {
     if (disabled) return;
@@ -73,10 +75,6 @@ export const ModalLayout = ({
       window.removeEventListener("keydown", handleKey);
     };
   }, [handleKey]);
-
-  useEffect(() => {
-    if (currentPath.current !== location.pathname) handleClose();
-  }, [currentPath.current, location.pathname]);
 
   if (!isOpen) return null;
 
