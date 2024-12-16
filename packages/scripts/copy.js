@@ -16,13 +16,16 @@ const CONFIG = {
   },
 };
 
-const metadataPath = path.resolve(__dirname, "../metadata.json");
+const metadataPath = path.resolve(__dirname, "./metadata.json");
 const metadata = JSON.parse(fs.readFileSync(metadataPath, "utf-8"));
 
-const COMPONENTS_DIR = path.resolve(__dirname, "../packages/react/components");
-const HOOKS_DIR = path.resolve(__dirname, "../packages/react/hooks/src");
-const PROVIDERS_DIR = path.resolve(__dirname, "../packages/react/providers");
-const ICONS_DIR = path.resolve(__dirname, "../packages/react/icons/src");
+const COMPONENTS_DIR = path.resolve(
+  __dirname,
+  "../../packages/react/components",
+);
+const HOOKS_DIR = path.resolve(__dirname, "../../packages/react/hooks/src");
+const PROVIDERS_DIR = path.resolve(__dirname, "../../packages/react/providers");
+const ICONS_DIR = path.resolve(__dirname, "../../packages/react/icons/src");
 
 const copyComponent = async (componentName) => {
   const componentPath = path.join(
@@ -134,7 +137,7 @@ if (args[0] === "add" && args[1]) {
     );
   } else if (metadata.componentDirs.includes(name)) {
     copyComponentDir(name).catch((err) =>
-      console.error("Errpr copying component dir:", err),
+      console.error("Error copying component dir:", err),
     );
   } else if (metadata.hooks.includes(name)) {
     copyHook(name).catch((err) => console.error("Error copying hook:", err));
