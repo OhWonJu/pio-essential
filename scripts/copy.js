@@ -16,16 +16,13 @@ const CONFIG = {
   },
 };
 
-const metadataPath = path.resolve(__dirname, "./metadata.json");
+const metadataPath = path.resolve(__dirname, "../metadata.json");
 const metadata = JSON.parse(fs.readFileSync(metadataPath, "utf-8"));
 
-const COMPONENTS_DIR = path.resolve(
-  __dirname,
-  "../../packages/react/components",
-);
-const HOOKS_DIR = path.resolve(__dirname, "../../packages/react/hooks/src");
-const PROVIDERS_DIR = path.resolve(__dirname, "../../packages/react/providers");
-const ICONS_DIR = path.resolve(__dirname, "../../packages/react/icons/src");
+const COMPONENTS_DIR = path.resolve(__dirname, "../packages/react/components");
+const HOOKS_DIR = path.resolve(__dirname, "../packages/react/hooks/src");
+const PROVIDERS_DIR = path.resolve(__dirname, "../packages/react/providers");
+const ICONS_DIR = path.resolve(__dirname, "../packages/react/icons/src");
 
 const copyComponent = async (componentName) => {
   const componentPath = path.join(

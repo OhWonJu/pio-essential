@@ -7019,6 +7019,8 @@ __metadata:
   dependencies:
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
+    fs-extra: "npm:^11.2.0"
+    glob: "npm:^11.0.0"
     nx: "npm:^20.2.1"
     path: "npm:^0.12.7"
     react: "npm:^18.3.1"

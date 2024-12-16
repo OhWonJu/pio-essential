@@ -1,6 +1,6 @@
 {
   "name": "pio-essential",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "TailwindCSS based React Design System & utility hooks",
   "keywords": [
     "React",
@@ -26,13 +26,17 @@
   ],
   "license": "MIT",
   "packageManager": "yarn@4.5.3",
-  "bin": "./packages/scripts/index.js",
+  "bin": "./scripts/index.js",
   "scripts": {
     "build": "nx build",
     "graph": "nx run-many --target=build --graph",
     "dev:storybook": "nx storybook @pio-essential/storybook",
     "dev:packages": "nx run-many --target=dev --projects='@pio-essential/react-hooks,@pio-essential/react-components-*'",
     "dev:all": "yarn dev:storybook & yarn dev:packages"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
