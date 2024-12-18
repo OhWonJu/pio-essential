@@ -28,7 +28,9 @@
   "packageManager": "yarn@4.5.3",
   "bin": "./scripts/index.js",
   "scripts": {
-    "build": "nx build",
+    "affected:build": "nx affected -t build",
+    "affected:test": "nx affected -t test",
+    "build:local": "nx build",
     "graph": "nx run-many --target=build --graph",
     "dev:storybook": "nx storybook @pio-essential/storybook",
     "dev:packages": "nx run-many --target=dev --projects='@pio-essential/react-hooks,@pio-essential/react-components-*'",
