@@ -77,4 +77,28 @@ describe("Modal 컴포넌트 테스트", () => {
     // THEN
     expect(modalLayout).not.toBeInTheDocument(); // 모달이 DOM에서 제거되었는지 확인
   });
+
+  it("Esc 입력시 Modal 이 사라지는지 확인", async () => {
+    // GIVEN
+    vi.useFakeTimers();
+    const { container } = render(<ModalTestStory />);
+
+    // WHEN
+    const button = screen.getByTestId("open-modal");
+
+    await act(async () => {
+      userEvent.click(button);
+      await vi.advanceTimersByTimeAsync(301);
+    });
+
+    const modalLayout = container.querySelector("#modal-layout");
+
+    await act(async () => {
+      userEvent.keyboard("{Escape>}");
+      await vi.advanceTimersByTimeAsync(301);
+    });
+
+    // THEN
+    expect(modalLayout).not.toBeInTheDocument(); // 모달이 DOM에서 제거되었는지 확인
+  });
 });
