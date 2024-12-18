@@ -35,9 +35,6 @@ export const ModalLayout = ({
   const ref = useRef() as React.MutableRefObject<HTMLDivElement>;
   const containerRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
-  console.log("cn: ", useOutsideClick);
-  console.log("???: ", useOutsideClick);
-
   const handleClose = useCallback(() => {
     if (disabled) return;
 
@@ -53,7 +50,7 @@ export const ModalLayout = ({
         return handleClose();
       }
     },
-    [onClose],
+    [onClose]
   );
 
   useOutsideClick(showModal, containerRef, handleClose);
@@ -81,23 +78,29 @@ export const ModalLayout = ({
   return (
     <>
       <div
+        id="modal-layout"
         ref={ref}
         role="dialog"
         className="fixed inset-0 flex justify-center items-center z-[99999] outline-none focus:outline-none bg-neutral-800/10 backdrop-blur-sm"
       >
         <div
+          id="modal-container"
           ref={containerRef}
           className={cn(
             "relative flex flex-col min-w-[300px] min-h-[300px] bg-background border overflow-hidden rounded-lg shadow-md border-neutral-300 dark:border-neutral-700 duration-300 transform-gpu",
             showModal ? "opacity-100" : "opacity-0",
             showModal && mode === "slide" && "translate-y-0",
             !showModal && mode === "slide" && "translate-y-full",
-            className,
+            className
           )}
         >
-          <section className="relative flex justify-center items-center p-6">
+          <section
+            id="modal-header"
+            className="relative flex justify-center items-center p-6"
+          >
             {headerComponent}
             <button
+              id="modal-close-button"
               onClick={handleClose}
               className="p-1 border-0 hover:opacity-70 transition absolute right-4"
             >

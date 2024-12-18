@@ -4,6 +4,7 @@ node_modules/
 webpack.*.js
 .git-commit-template
 
+services/storybook/
 services/storybook/storybook-static/**/*
 services/storybook/build-storybook.log
 

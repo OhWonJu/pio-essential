@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import {
   ModalBody,
@@ -6,7 +7,7 @@ import {
   ModalLayout,
 } from "@pio-essential/react-components-modal";
 
-export default {
+const meta: Meta<typeof ModalLayout> = {
   title: "React Components/Modal",
   parameters: {
     layout: "centered",
@@ -14,7 +15,7 @@ export default {
   argTypes: {
     mode: {
       options: ["fade", "slide"],
-      control: "select",
+      control: { type: "select" },
       description: "모달 popup animation (fade | optional)",
     },
   },
@@ -24,59 +25,63 @@ export default {
   tags: ["autodocs"],
 };
 
-export const ModalStory = {
-  render: (args: { mode: "fade" | "slide" }) => {
-    const ModalFadeDemo = ({
-      isOpen,
-      onClose,
-    }: {
-      isOpen: boolean;
-      onClose: () => void;
-    }) => {
-      const ModalHeader = (
-        <span className="text-lg font-semibold">
-          {args.mode === "fade" ? "Fade" : "Slide"} Modal
-        </span>
-      );
+export default meta;
+type Story = StoryObj<typeof ModalLayout>;
 
-      return (
-        <ModalLayout
-          isOpen={isOpen}
-          onClose={onClose}
-          mode={args.mode}
-          headerComponent={ModalHeader}
-        >
-          <ModalBody>Body</ModalBody>
-          <ModalFooter>Footer</ModalFooter>
-        </ModalLayout>
-      );
-    };
+const ModalFadeDemo = ({
+  isOpen,
+  onClose,
+  mode = "fade",
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  mode?: "fade" | "slide";
+}) => {
+  const ModalHeader = (
+    <span className="text-lg font-semibold">
+      {mode === "fade" ? "Fade" : "Slide"} Modal
+    </span>
+  );
 
-    const ModalSlideDemo = ({
-      isOpen,
-      onClose,
-    }: {
-      isOpen: boolean;
-      onClose: () => void;
-    }) => {
-      const ModalHeader = (
-        <span className="text-lg font-semibold">Slide Demo</span>
-      );
+  return (
+    <ModalLayout
+      isOpen={isOpen}
+      onClose={onClose}
+      mode={mode}
+      headerComponent={ModalHeader}
+    >
+      <ModalBody>Body</ModalBody>
+      <ModalFooter>Footer</ModalFooter>
+    </ModalLayout>
+  );
+};
 
-      return (
-        <ModalLayout
-          isOpen={isOpen}
-          onClose={onClose}
-          headerComponent={ModalHeader}
-          className="w-full sm:w-[300px] h-full"
-          mode="slide"
-        >
-          <ModalBody>Body</ModalBody>
-          <ModalFooter>Footer</ModalFooter>
-        </ModalLayout>
-      );
-    };
+const ModalSlideDemo = ({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
+  const ModalHeader = <span className="text-lg font-semibold">Slide Demo</span>;
 
+  return (
+    <ModalLayout
+      data-testId="modal-layout"
+      isOpen={isOpen}
+      onClose={onClose}
+      headerComponent={ModalHeader}
+      className="w-full sm:w-[300px] h-full"
+      mode="slide"
+    >
+      <ModalBody>Body</ModalBody>
+      <ModalFooter>Footer</ModalFooter>
+    </ModalLayout>
+  );
+};
+
+export const ModalStory: Story = {
+  render: (args) => {
     const Renderer = () => {
       const [isOpen, setIsOpen] = useState(false);
       const [modalType, setModalType] = useState<"fade" | "slide">("fade");
@@ -88,7 +93,7 @@ export const ModalStory = {
       return (
         <div className="relative translate-x-0 flex flex-col justify-center items-center gap-y-4 w-[600px] h-[400px] bg-background overflow-hidden">
           {modalType === "fade" && (
-            <ModalFadeDemo isOpen={isOpen} onClose={onClose} />
+            <ModalFadeDemo isOpen={isOpen} onClose={onClose} mode={args.mode} />
           )}
           {modalType === "slide" && (
             <ModalSlideDemo isOpen={isOpen} onClose={onClose} />
@@ -110,6 +115,38 @@ export const ModalStory = {
             }}
           >
             Open Slide Modal!
+          </button>
+        </div>
+      );
+    };
+
+    return <Renderer />;
+  },
+  args: {
+    mode: "fade",
+  },
+};
+
+export const ModalTestStory: Story = {
+  render: () => {
+    const Renderer = () => {
+      const [isOpen, setIsOpen] = useState(false);
+
+      const onClose = () => {
+        setIsOpen(false);
+      };
+
+      return (
+        <div className="relative translate-x-0 flex flex-col justify-center items-center gap-y-4 w-[600px] h-[400px] bg-background overflow-hidden">
+          <ModalFadeDemo isOpen={isOpen} onClose={onClose} />
+          <button
+            data-testid="open-modal"
+            className="w-[80%] border p-4 rounded-md"
+            onClick={() => {
+              setIsOpen(true);
+            }}
+          >
+            Open Modal!
           </button>
         </div>
       );
