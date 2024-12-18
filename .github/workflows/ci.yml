@@ -21,10 +21,13 @@ jobs:
           node-version: 20
           cache: "yarn"
 
-      - uses: nrwl/nx-set-shas@v4
+      - name: Yarn Workspaces Check
+        run: yarn workspaces list --verbose
 
       - name: Install dependencies
         run: yarn install --immutable
+
+      - uses: nrwl/nx-set-shas@v4
 
       - name: Test
         run: yarn affected:test --parallel=5

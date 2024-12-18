@@ -1,7 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 
-import run from "@pio-essential/webpack-config";
+import run from "@pio-essential/webpack-build-config";
 import pkg from "./package.json" assert { type: "json" };
 
 const __filename = fileURLToPath(import.meta.url);
