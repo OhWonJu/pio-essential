@@ -1,6 +1,6 @@
 {
   "name": "@pio-essential/webpack-build-config",
-  "packageManager": "yarn@4.5.3",
+  "packageManager": "yarn@4.2.2",
   "main": "index.js",
   "files": [
     "index.js"
@@ -19,6 +19,6 @@
     "path": "^0.12.7",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.7.2"
+    "typescript": "5.1.3"
   }
 }
