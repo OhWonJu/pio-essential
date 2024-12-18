@@ -37,7 +37,7 @@ const ModalFadeDemo = ({
   onClose: () => void;
   mode?: "fade" | "slide";
 }) => {
-  const ModalHeader = (
+  const DefaultModalHeader = (
     <span className="text-lg font-semibold">
       {mode === "fade" ? "Fade" : "Slide"} Modal
     </span>
@@ -48,7 +48,7 @@ const ModalFadeDemo = ({
       isOpen={isOpen}
       onClose={onClose}
       mode={mode}
-      headerComponent={ModalHeader}
+      headerComponent={DefaultModalHeader}
     >
       <ModalBody>Body</ModalBody>
       <ModalFooter>Footer</ModalFooter>
@@ -63,14 +63,16 @@ const ModalSlideDemo = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
-  const ModalHeader = <span className="text-lg font-semibold">Slide Demo</span>;
+  const SlideModalHeader = (
+    <span className="text-lg font-semibold">Slide Demo</span>
+  );
 
   return (
     <ModalLayout
       data-testId="modal-layout"
       isOpen={isOpen}
       onClose={onClose}
-      headerComponent={ModalHeader}
+      headerComponent={SlideModalHeader}
       className="w-full sm:w-[300px] h-full"
       mode="slide"
     >

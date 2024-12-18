@@ -13,7 +13,7 @@ import { useOutsideClick } from "@/hooks/useOutsideClick";
 import { Cross } from "@/components/icons/Cross";
 
 interface ModalLayoutProps {
-  headerComponent?: React.ReactNode | React.ReactNode[];
+  headerComponent?: React.ReactNode;
   disabled?: boolean;
   isOpen: boolean;
   className?: string;

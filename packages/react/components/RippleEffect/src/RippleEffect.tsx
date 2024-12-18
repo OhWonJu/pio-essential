@@ -19,41 +19,45 @@ export const RippleEffect = forwardRef(
   ({ rippleColor }: RippleEffectProps, ref) => {
     const rippleContainerRef = useRef<HTMLSpanElement>(null);
 
-    useImperativeHandle(ref, () => {
-      return {
-        createRipple(event: MouseEvent<HTMLElement>) {
-          const button = event.currentTarget;
-          const circle = document.createElement("i");
-          const diameter = Math.max(button.clientWidth, button.clientHeight);
-          const radius = diameter / 2;
+    useImperativeHandle(
+      ref,
+      () => {
+        return {
+          createRipple(event: MouseEvent<HTMLElement>) {
+            const button = event.currentTarget;
+            const circle = document.createElement("i");
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
 
-          circle.style.width = `${diameter}px`;
-          circle.style.height = `${diameter}px`;
-          circle.style.left = `${
-            event.clientX - button.getBoundingClientRect().left - radius
-          }px`;
-          circle.style.top = `${
-            event.clientY - button.getBoundingClientRect().top - radius
-          }px`;
+            circle.style.width = `${diameter}px`;
+            circle.style.height = `${diameter}px`;
+            circle.style.left = `${
+              event.clientX - button.getBoundingClientRect().left - radius
+            }px`;
+            circle.style.top = `${
+              event.clientY - button.getBoundingClientRect().top - radius
+            }px`;
 
-          // If you are using a color theme, recommend using color from theme.
-          circle.style.backgroundColor = rippleColor
-            ? rippleColor
-            : "#21212120"; // ex) var(--puls)
+            // If you are using a color theme, recommend using color from theme.
+            circle.style.backgroundColor = rippleColor
+              ? rippleColor
+              : "#21212120"; // ex) var(--puls)
 
-          circle.classList.add(styles.ripple);
+            circle.classList.add(styles.ripple);
 
-          const existingRipple = button.querySelector(`.${styles.ripple}`);
+            const existingRipple = button.querySelector(`.${styles.ripple}`);
 
-          if (existingRipple) {
-            existingRipple.remove();
-          }
+            if (existingRipple) {
+              existingRipple.remove();
+            }
 
-          rippleContainerRef.current?.appendChild(circle);
-        },
-      };
-    }, [rippleContainerRef]);
+            rippleContainerRef.current?.appendChild(circle);
+          },
+        };
+      },
+      [rippleContainerRef]
+    );
 
     return <span ref={rippleContainerRef} />;
-  },
+  }
 );

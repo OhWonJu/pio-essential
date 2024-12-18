@@ -4,8 +4,9 @@ import {
   RippleEffect,
   RippleRef,
 } from "@pio-essential/react-components-ripple-effect";
+import { Meta, StoryObj } from "@storybook/react";
 
-export default {
+const meta: Meta<typeof RippleEffect> = {
   title: "React Components/RippleEffect",
   parameters: {
     layout: "centered",
@@ -18,8 +19,12 @@ export default {
     },
   },
 };
-export const RippleStory = {
-  render: (args: { rippleColor: string }) => {
+
+export default meta;
+type Story = StoryObj<typeof RippleEffect>;
+
+export const RippleStory: Story = {
+  render: (args) => {
     function RippleEffectRender() {
       const rippleRef = useRef<RippleRef>(null);
 
@@ -29,6 +34,7 @@ export const RippleStory = {
 
       return (
         <div
+          data-testid="ripple-trigger"
           onClick={(e) => onClickHandler(e)}
           className="relative w-[500px] h-[200px] border bg-background border-neutral-200 rounded-2xl overflow-hidden"
         >
