@@ -9,7 +9,7 @@ import * as stories from "./Modal.stories";
 const { ModalTestStory } = composeStories(stories);
 
 describe("Modal 컴포넌트 테스트", () => {
-  it("Modal Open 클릭 시 Modal 이 잘 뜨는지 확인", async () => {
+  it("Modal Open 클릭 시 Modal 컴포넌트 활성화 확인", async () => {
     // GIVEN
     vi.useFakeTimers();
     const { container } = render(<ModalTestStory />);
@@ -27,7 +27,7 @@ describe("Modal 컴포넌트 테스트", () => {
     expect(modalLayout).toBeInTheDocument();
   });
 
-  it("Modal Container 외부 영역 클릭 시 Modal 이 사라지는지 확인", async () => {
+  it("Modal Container 외부 영역 클릭 시 Modal 컴포넌트 비활성화 확인", async () => {
     // GIVEN
     vi.useFakeTimers();
     const { container } = render(<ModalTestStory />);
@@ -49,10 +49,10 @@ describe("Modal 컴포넌트 테스트", () => {
     });
 
     // THEN
-    expect(modalLayout).not.toBeInTheDocument(); // 모달이 DOM에서 제거되었는지 확인
+    expect(modalLayout).not.toBeInTheDocument();
   });
 
-  it("Modal Close 버튼 클릭 시 Modal 이 사라지는지 확인", async () => {
+  it("Modal Close 버튼 클릭 시 Modal 컴포넌트 비활성화 확인", async () => {
     // GIVEN
     vi.useFakeTimers();
     const { container } = render(<ModalTestStory />);
@@ -75,10 +75,10 @@ describe("Modal 컴포넌트 테스트", () => {
     });
 
     // THEN
-    expect(modalLayout).not.toBeInTheDocument(); // 모달이 DOM에서 제거되었는지 확인
+    expect(modalLayout).not.toBeInTheDocument();
   });
 
-  it("Esc 입력시 Modal 이 사라지는지 확인", async () => {
+  it("Esc 입력시 Modal 컴포넌트 비활성화 확인", async () => {
     // GIVEN
     vi.useFakeTimers();
     const { container } = render(<ModalTestStory />);
@@ -99,6 +99,6 @@ describe("Modal 컴포넌트 테스트", () => {
     });
 
     // THEN
-    expect(modalLayout).not.toBeInTheDocument(); // 모달이 DOM에서 제거되었는지 확인
+    expect(modalLayout).not.toBeInTheDocument();
   });
 });

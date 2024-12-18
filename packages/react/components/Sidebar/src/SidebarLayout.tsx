@@ -72,11 +72,11 @@ export const SidebarLayout = ({
         return handleClose();
       }
     },
-    [onClose],
+    [onClose]
   );
 
   const handleMouseDown = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     event.preventDefault();
     event.stopPropagation();
@@ -148,6 +148,7 @@ export const SidebarLayout = ({
 
   return (
     <aside
+      id="sidebar-layout"
       ref={sidebarRef}
       className={cn(
         "group/sidebar fixed flex flex-col top-0 h-full bg-background z-[99999] overflow-hidden shadow-lg border-l border-r border-neutral-200/50 dark:border-neutral-700 transform-gpu duration-300",
@@ -158,17 +159,21 @@ export const SidebarLayout = ({
         showSidebar && align === "right" && "translate-x-0",
         !showSidebar && align === "right" && "translate-x-full",
         isResetting && "transition-all ease-in-out duration-300",
-        className,
+        className
       )}
     >
-      <section className="relative flex justify-center items-center min-h-[60px] p-4">
+      <section
+        id="sidebar-header"
+        className="relative flex justify-center items-center min-h-[60px] p-4"
+      >
         {headerComponent}
         <button
+          id="sidebar-close-button"
           onClick={handleClose}
           className={cn(
             "absolute p-1 border-0 hover:opacity-70 transition",
             align === "left" && "left-4",
-            align === "right" && "right-4",
+            align === "right" && "right-4"
           )}
         >
           {align === "left" ? (
@@ -181,12 +186,13 @@ export const SidebarLayout = ({
       {children}
       {resizeable && (
         <div
+          id="sidebar-resize-bar"
           onMouseDown={handleMouseDown}
           onClick={resetWidth}
           className={cn(
             "opacity-0 group-hover/sidebar:opacity-100 transition cursor-ew-resize absolute h-full w-1 bg-neutral-300/50 dark:bg-neutral-600/50 top-0",
             align === "left" && "right-0",
-            align === "right" && "left-0",
+            align === "right" && "left-0"
           )}
         />
       )}

@@ -38,7 +38,7 @@ const ModalFadeDemo = ({
   mode?: "fade" | "slide";
 }) => {
   const DefaultModalHeader = (
-    <span className="text-lg font-semibold">
+    <span key="default" className="text-lg font-semibold">
       {mode === "fade" ? "Fade" : "Slide"} Modal
     </span>
   );
@@ -64,7 +64,9 @@ const ModalSlideDemo = ({
   onClose: () => void;
 }) => {
   const SlideModalHeader = (
-    <span className="text-lg font-semibold">Slide Demo</span>
+    <span key="slide" className="text-lg font-semibold">
+      Slide Demo
+    </span>
   );
 
   return (

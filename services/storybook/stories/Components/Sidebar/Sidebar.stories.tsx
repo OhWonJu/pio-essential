@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import {
   SidebarBody,
@@ -6,7 +7,7 @@ import {
   SidebarLayout,
 } from "@pio-essential/react-components-sidebar";
 
-export default {
+const meta: Meta<typeof SidebarLayout> = {
   title: "React Components/Sidebar",
   parameters: {
     layout: "centered",
@@ -45,15 +46,11 @@ export default {
   tags: ["autodocs"],
 };
 
-export const SidebarStory = {
-  render: (args: {
-    align: "left" | "right";
-    minWidth: number;
-    maxWidth: number;
-    duration: number;
-    outsideClickClose: boolean;
-    resizeable: boolean;
-  }) => {
+export default meta;
+type Story = StoryObj<typeof SidebarLayout>;
+
+export const SidebarStory: Story = {
+  render: (args) => {
     const SidebarDemo = ({
       isOpen,
       onClose,
@@ -93,6 +90,7 @@ export const SidebarStory = {
         <div className="relative translate-x-0 flex flex-col justify-center items-center gap-y-4 w-[600px] h-[400px] bg-background overflow-hidden">
           <SidebarDemo isOpen={isOpen} onClose={onClose} />
           <button
+            data-testid="open-sidebar"
             className="w-[80%] border p-4 rounded-md"
             onClick={() => {
               setIsOpen(true);
