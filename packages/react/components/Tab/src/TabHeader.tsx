@@ -40,14 +40,14 @@ export const TabHeader = ({ children, className, ...rest }: TabHeaderProps) => {
         );
       }
       return null;
-    },
+    }
   );
 
   return (
     <ul
       className={cn(
         "relative w-full h-full flex justify-between items-center list-none border-b-[1.5px] border-neutral-300 dark:border-neutral-700",
-        className,
+        className
       )}
       {...rest}
     >
