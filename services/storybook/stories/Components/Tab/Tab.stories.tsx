@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   TabHeader,
   TabProvider,
   TabSection,
+  TabRef,
 } from "@pio-essential/react-components-tab";
 
 export default {
@@ -47,25 +48,42 @@ export const TabStory = {
     distance: number;
     duration: number;
     defaultActiveTab: number;
-  }) => (
-    <div className="w-[500px] h-[500px] bg-background overflow-hidden">
-      <TabProvider defaultActiveTab={args.defaultActiveTab}>
-        <TabHeader className="h-[60px]">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-        </TabHeader>
-        <TabSection
-          className="p-4"
-          distance={args.distance}
-          duration={args.duration}
-          useAnimation={args.useAnimation}
-        >
-          <div className="bg-red-100">tab1</div>
-          <div className="bg-blue-200">tab2</div>
-          <div className="bg-green-200">tab3</div>
-        </TabSection>
-      </TabProvider>
-    </div>
-  ),
+  }) => {
+    const tabRef = useRef<TabRef>(null);
+
+    const activeTab = (index: number) => {
+      tabRef.current?.activeTab(index);
+    };
+
+    return (
+      <div className="w-[500px] h-[500px] bg-background overflow-hidden">
+        <TabProvider ref={tabRef} defaultActiveTab={args.defaultActiveTab}>
+          <TabHeader className="h-[60px]">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </TabHeader>
+          <TabSection
+            className="p-4 w-full"
+            distance={args.distance}
+            duration={args.duration}
+            useAnimation={args.useAnimation}
+          >
+            <div className="bg-red-100">tab1</div>
+            <div className="bg-blue-200">tab2</div>
+            <div className="bg-green-200">tab3</div>
+          </TabSection>
+        </TabProvider>
+
+        <div className="mt-4 w-full grid place-items-center">
+          <button
+            onClick={() => activeTab(1)}
+            className="p-2 border rounded-md"
+          >
+            active Tab2
+          </button>
+        </div>
+      </div>
+    );
+  },
 };

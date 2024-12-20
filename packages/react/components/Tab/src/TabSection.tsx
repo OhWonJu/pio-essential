@@ -30,8 +30,8 @@ export const TabSection = ({
             prevActiveTab === activeTab
               ? 0
               : prevActiveTab < activeTab
-                ? distance
-                : -distance,
+              ? distance
+              : -distance,
           opacity: 0,
         },
         animate: { x: 0, opacity: 1 },
@@ -41,16 +41,18 @@ export const TabSection = ({
 
   return (
     <AnimatePresence>
-      <motion.section
-        key={activeTab ? activeTab : -1}
-        {...animationProps}
-        className={className}
-        style={{ originY: "0px", ...style }}
-      >
-        {activeTab >= 0 && activeTab < childrenWithProps.length
-          ? childrenWithProps[activeTab]
-          : null}
-      </motion.section>
+      <div className="relative">
+        <motion.section
+          key={activeTab ? activeTab : -1}
+          {...animationProps}
+          className={className}
+          style={{ originY: "0px", ...style }}
+        >
+          {activeTab >= 0 && activeTab < childrenWithProps.length
+            ? childrenWithProps[activeTab]
+            : null}
+        </motion.section>
+      </div>
     </AnimatePresence>
   );
 };

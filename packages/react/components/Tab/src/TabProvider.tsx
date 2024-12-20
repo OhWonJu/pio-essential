@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useImperativeHandle, useRef, useState } from "react";
 
 import TabContext from "./TabContext";
 
@@ -7,27 +7,42 @@ interface TabProviderProps {
   children: React.ReactNode | React.ReactNode[];
 }
 
-export const TabProvider = ({
-  children,
-  defaultActiveTab = 0,
-}: TabProviderProps) => {
-  const [activeTab, setActiveTab] = useState<number>(defaultActiveTab);
-  const prevActiveTab = useRef(activeTab);
-
-  const handleSetActiveTab = (index: number) => {
-    prevActiveTab.current = activeTab;
-    setActiveTab(index);
-  };
-
-  return (
-    <TabContext.Provider
-      value={{
-        activeTab,
-        prevActiveTab: prevActiveTab.current,
-        setActiveTab: handleSetActiveTab,
-      }}
-    >
-      {children}
-    </TabContext.Provider>
-  );
+export type TabRef = {
+  activeTab: (index: number) => void;
 };
+
+export const TabProvider = React.forwardRef<unknown, TabProviderProps>(
+  ({ children, defaultActiveTab = 0 }, ref) => {
+    const [activeTab, setActiveTab] = useState<number>(defaultActiveTab);
+    const prevActiveTab = useRef(activeTab);
+
+    const handleSetActiveTab = (index: number) => {
+      prevActiveTab.current = activeTab;
+      setActiveTab(index);
+    };
+
+    useImperativeHandle(
+      ref,
+      () => {
+        return {
+          activeTab(index: number) {
+            handleSetActiveTab(index);
+          },
+        };
+      },
+      [ref]
+    );
+
+    return (
+      <TabContext.Provider
+        value={{
+          activeTab,
+          prevActiveTab: prevActiveTab.current,
+          setActiveTab: handleSetActiveTab,
+        }}
+      >
+        {children}
+      </TabContext.Provider>
+    );
+  }
+);
