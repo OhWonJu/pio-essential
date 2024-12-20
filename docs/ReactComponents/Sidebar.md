@@ -2,7 +2,7 @@
 
 Resizeable Sidebar Components
 
-[storybook](https://6758546295e48c1f5cb91421-cmrntqxcen.chromatic.com/?path=/docs/react-components-sidebar--docs)
+[storybook](https://6758546295e48c1f5cb91421-qzkaggnqsg.chromatic.com/?path=/docs/react-components-sidebar--docs)
 
 <br/>
 

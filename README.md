@@ -198,7 +198,7 @@ tsconfig
 
 # StoryBook 을 통해 사용법 알아보기
 
-[StoryBook](https://6758546295e48c1f5cb91421-cmrntqxcen.chromatic.com/) 을 통해 컴포넌트 및 훅의 Reference를 알아보세요!
+[StoryBook](https://6758546295e48c1f5cb91421-qzkaggnqsg.chromatic.com/) 을 통해 컴포넌트 및 훅의 Reference를 알아보세요!
 
 <br />
 <br />

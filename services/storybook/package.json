@@ -59,6 +59,5 @@
     "clsx": "^2.1.1",
     "motion": "^11.13.3",
     "tailwind-merge": "^2.5.5"
-  },
-  "version": ""
+  }
 }

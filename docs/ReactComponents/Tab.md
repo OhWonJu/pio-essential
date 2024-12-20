@@ -2,7 +2,7 @@
 
 React ContextAPI, motion(구 Framer-motion) 기반 Tab Components
 
-[storybook](https://6758546295e48c1f5cb91421-cmrntqxcen.chromatic.com/?path=/docs/react-components-tab--docs)
+[storybook](https://6758546295e48c1f5cb91421-qzkaggnqsg.chromatic.com/?path=/docs/react-components-tab--docs)
 
 <br/>
 
@@ -35,6 +35,49 @@ export function TabDemo() {
   return (
     <div className="w-[500px] h-[500px] bg-background overflow-hidden">
       <TabProvider defaultActiveTab={0}>
+        <TabHeader className="h-[60px]">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </TabHeader>
+        <TabSection className="p-4" distance={30} duration={0.4} useAnimation>
+          <div className="bg-red-100">tab1</div>
+          <div className="bg-blue-200">tab2</div>
+          <div className="bg-green-200">tab3</div>
+        </TabSection>
+      </TabProvider>
+    </div>
+  );
+}
+```
+
+<br />
+
+## Advanced Usage
+
+### TabProvider 외부 스코프에서 Tab 조작하기
+
+TabProvider 에 Ref 를 전달하여 TabProvdier 내부의 activeTab 함수를 사용할 수 있습니다.
+이를 통해 TabHeader 와 같은 TabProvider 내부 스코프 밖에서 Tab 활성화를 제어 할 수 있습니다.
+
+```tsx
+import {
+  TabHeader,
+  TabProvider,
+  TabSection,
+  TabRef,
+} from "@/components/ui/Tab";
+
+export function TabDemo() {
+  const tabRef = useRef<TabRef>(null);
+
+  const activeTab = (index: number) => {
+    tabRef.current?.activeTab(index);
+  };
+
+  return (
+    <div className="w-[500px] h-[500px] bg-background overflow-hidden">
+      <TabProvider ref={tebRef} defaultActiveTab={0}>
         <TabHeader className="h-[60px]">
           <span>1</span>
           <span>2</span>

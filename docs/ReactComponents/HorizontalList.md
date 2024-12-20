@@ -1,6 +1,6 @@
 # `HorizontalList`
 
-[storybook](https://6758546295e48c1f5cb91421-cmrntqxcen.chromatic.com/?path=/docs/react-components-horizontal-list--docs)
+[storybook](https://6758546295e48c1f5cb91421-qzkaggnqsg.chromatic.com/?path=/docs/react-components-horizontal-list--docs)
 
 <br />
 
@@ -32,7 +32,9 @@ export function HorizontalListDemo() {
       <div
         key={index}
         onClick={clickHandler}
-        className={`w-[150px] aspect-square grid place-items-center ${data[index] ? "bg-blue-100" : "bg-neutral-300"}`}
+        className={`w-[150px] aspect-square grid place-items-center ${
+          data[index] ? "bg-blue-100" : "bg-neutral-300"
+        }`}
       >
         {index}
       </div>
