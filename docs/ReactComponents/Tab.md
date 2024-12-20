@@ -1,6 +1,6 @@
 # `Tab`
 
-React ContextAPI, motion(구 Framer-motion) 기반 Tab Components
+Compound Components 패턴, motion(구 Framer-motion) 기반 Tab Components
 
 [storybook](https://6758546295e48c1f5cb91421-qzkaggnqsg.chromatic.com/?path=/docs/react-components-tab--docs)
 
@@ -11,7 +11,7 @@ React ContextAPI, motion(구 Framer-motion) 기반 Tab Components
 CLI
 
 ```bash
-npx pio-essential add RippleEffect
+npx pio-essential add Tab
 ```
 
 <br />
