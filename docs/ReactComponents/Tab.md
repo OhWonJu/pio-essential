@@ -57,7 +57,7 @@ export function TabDemo() {
 
 ### TabProvider 외부 스코프에서 Tab 조작하기
 
-TabProvider 에 Ref 를 전달하여 TabProvdier 내부의 activeTab 함수를 사용할 수 있습니다.
+TabProvider 에 Ref 를 전달하여 TabProvider 내부의 activeTab 함수를 사용할 수 있습니다.
 이를 통해 TabHeader 와 같은 TabProvider 내부 스코프 밖에서 Tab 활성화를 제어 할 수 있습니다.
 
 ```tsx
@@ -89,6 +89,15 @@ export function TabDemo() {
           <div className="bg-green-200">tab3</div>
         </TabSection>
       </TabProvider>
+
+      <div className="mt-4 w-full grid place-items-center">
+          <button
+            onClick={() => activeTab(1)}
+            className="p-2 border rounded-md"
+          >
+            active Tab2
+          </button>
+      </div>
     </div>
   );
 }
